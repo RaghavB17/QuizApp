@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: antiquewhite;
+}
+
+.score-section {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  color: antiquewhite;
+}
+
+.loader {
+  font-weight: bold;
+  font-size: 200%;
+  text-align: center;
+  background-color: purple;
+  color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.question-section {
+  width: 450px;
+  min-height: 100px;
+  padding: 2.5rem;
+  background-color: antiquewhite;
+  color: purple;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.questions {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.answer-section {
+  display: grid;
+  margin-top: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  display: grid;
+  margin-top: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.answers {
+  padding: 1rem;
+  background-color: antiquewhite;
+  color: purple;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
