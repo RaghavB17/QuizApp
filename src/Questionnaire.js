@@ -2,30 +2,42 @@ import React from "react";
 import "./App.css";
 
 const Questionnaire = ({
+  showAnswers,
   handleAnswer,
-  data: { question, correct_answer, incorrect_answers },
+  handleNextQuestion,
+  data: { question, correct_answer, answers },
 }) => {
-  const shuffledAnswers = [correct_answer, ...incorrect_answers].sort(
-    () => Math.random() - 0.5
-  );
-
   return (
-    <div>
+    <div className="grid">
       <div className="question-section">
         <h2
           className="questions"
           dangerouslySetInnerHTML={{ __html: question }}
         />
       </div>
+
       <div className="answer-section">
-        {shuffledAnswers.map((answer) => (
-          <button
-            className="answers"
-            onClick={() => handleAnswer(answer)}
-            dangerouslySetInnerHTML={{ __html: answer }}
-          />
-        ))}
+        {answers.map((answer) => {
+          const textColor = showAnswers
+            ? answer === correct_answer
+              ? "correct-answer"
+              : "incorrect-answer"
+            : "no-answer";
+
+          return (
+            <button
+              className={`${textColor}`}
+              onClick={() => handleAnswer(answer)}
+              dangerouslySetInnerHTML={{ __html: answer }}
+            />
+          );
+        })}
       </div>
+      {showAnswers && (
+        <button onClick={handleNextQuestion} className="next-question">
+          Next Question
+        </button>
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: purple;
+  background-color: plum;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,12 +19,17 @@
   font-weight: bold;
   font-size: 200%;
   text-align: center;
-  background-color: purple;
+  background-color: plum;
   color: antiquewhite;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
 }
 
 .question-section {
@@ -54,11 +59,55 @@
   gap: 1.5rem;
 }
 
-.answers {
+/* .answers {
   padding: 1rem;
   background-color: antiquewhite;
-  color: purple;
   font-weight: 600;
   border-radius: 0.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+} */
+
+.correct-answer {
+  color: green;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: antiquewhite;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.incorrect-answer {
+  color: red;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: antiquewhite;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.no-answer {
+  color: purple;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: antiquewhite;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.next-question {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  width: 25%;
+  margin-left: 75%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #6d28d9;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
 }
