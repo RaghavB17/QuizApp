@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 const Questionnaire = ({
-  showAnswers,
+  answerSelected,
   handleAnswer,
   handleNextQuestion,
   data: { question, correct_answer, answers },
@@ -18,7 +18,7 @@ const Questionnaire = ({
 
       <div className="answer-section">
         {answers.map((answer) => {
-          const textColor = showAnswers
+          const textColor = answerSelected
             ? answer === correct_answer
               ? "correct-answer"
               : "incorrect-answer"
@@ -33,7 +33,7 @@ const Questionnaire = ({
           );
         })}
       </div>
-      {showAnswers && (
+      {answerSelected && (
         <button onClick={handleNextQuestion} className="next-question">
           Next Question
         </button>

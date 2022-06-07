@@ -9,7 +9,7 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [showAnswers, setShowAnswers] = useState(false);
+  const [answerSelected, setAnswerSelected] = useState(false);
 
   useEffect(() => {
     fetch(API_URL)
@@ -28,18 +28,18 @@ function App() {
   }, []);
 
   const handleAnswer = (answer) => {
-    if (!showAnswers) {
+    if (!answerSelected) {
       // to prevent double answers
       if (answer === questions[currentIndex].correct_answer) {
         setScore(score + 1);
       }
     }
 
-    setShowAnswers(true);
+    setAnswerSelected(true);
   };
 
   const handleNextQuestion = () => {
-    setShowAnswers(false);
+    setAnswerSelected(false);
 
     setCurrentIndex(currentIndex + 1);
   };
@@ -53,7 +53,7 @@ function App() {
           data={questions[currentIndex]}
           handleAnswer={handleAnswer}
           handleNextQuestion={handleNextQuestion}
-          showAnswers={showAnswers}
+          answerSelected={answerSelected}
         />
       )}
     </div>
