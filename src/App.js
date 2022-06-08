@@ -44,10 +44,18 @@ function App() {
     setCurrentIndex(currentIndex + 1);
   };
 
+  const handleResetClick = () => {
+    setCurrentIndex(0);
+    setScore(0);
+    setAnswerSelected(false);
+  };
+
   return questions.length > 0 ? (
     <div className="App">
       {currentIndex >= questions.length ? (
-        <h1 className="score-section">Game Ended! Your Score is: {score}.</h1>
+        <button className="button" onClick={handleResetClick}>
+          Game Ended, your Score is: {score}. Click here to Play Again!
+        </button>
       ) : (
         <Questionnaire
           data={questions[currentIndex]}
